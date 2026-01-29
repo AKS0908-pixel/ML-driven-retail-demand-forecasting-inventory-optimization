@@ -1,121 +1,116 @@
-**ML-Driven Retail Demand Forecasting & Inventory Optimization**
+# ML-Driven Retail Demand Forecasting & Inventory Optimization
 
 Predicting retail product demand and optimizing inventory for multiple stores using historical sales data with ML regression and actionable recommendations.
 
-🚀 Project Overview
+---
 
-This project leverages retail sales and inventory data to build ML models for demand forecasting and provides inventory optimization recommendations. Using Python, ML algorithms, and an interactive dashboard, stakeholders can make data-driven inventory decisions to reduce stock-outs, minimize overstock, and improve revenue.
+## 🚀 Project Overview
 
-📊 Dashboard
+This project leverages **retail sales and inventory data** to build **ML models for demand forecasting** and provides **inventory optimization recommendations**. Using Python, ML algorithms, and an interactive dashboard, stakeholders can **make data-driven inventory decisions** to reduce stock-outs, minimize overstock, and improve revenue.
 
-Interactive dashboard built in Power BI / Streamlit showcasing:
+---
 
-Daily and weekly sales trends
+## 📊 Dashboard
 
-Stock-out risk heatmaps
+Interactive dashboard built in **Power BI / Streamlit** showcasing:
 
-Predicted vs actual sales
+- Daily and weekly sales trends  
+- Stock-out risk heatmaps  
+- Predicted vs actual sales  
+- Reorder recommendations per store & category  
+- KPIs: potential revenue saved, inventory utilization
 
-Reorder recommendations per store & category
+---
 
-KPIs: potential revenue saved, inventory utilization
+## 📦 Dataset Overview
 
-📦 Dataset Overview
+- **Source:** Simulated retail sales & inventory dataset  
+- **Total Records:** 720 (3 stores × 4 categories × 60 days)  
+- **Columns:**  
+  - `date`  
+  - `store_id`  
+  - `product_category`  
+  - `units_sold`  
+  - `inventory_level`  
+  - `price`  
+  - `promotion_flag`  
 
-Source: Simulated retail sales & inventory dataset
+---
 
-Total Records: 720 (3 stores × 4 categories × 60 days)
+## 🎯 Problem Statement
 
-Columns:
-date, store_id, product_category, units_sold, inventory_level, price, promotion_flag
+Retailers often lose revenue due to **stock-outs** or **overstock**. The goal is to:
 
-🎯 Problem Statement
+1. Predict product demand at store & category level  
+2. Generate actionable **inventory recommendations**  
+3. Enable managers to make **data-backed operational decisions**
 
-Retailers often lose revenue due to stock-outs or overstock. The goal is to:
+---
 
-Predict product demand at store & category level
+## 🧠 Modeling Approach
 
-Generate actionable inventory recommendations
+- **Models Used:** Linear Regression, Random Forest Regressor, Prophet (optional)  
+- **Target Variable:** `units_sold` per day  
+- **Loss Metric:** RMSE (Root Mean Squared Error)  
 
-Enable managers to make data-backed operational decisions
+### ⚙️ Pipeline Summary
 
-🧠 Modeling Approach
+✅ **Data Preprocessing**  
 
-Models Used: Linear Regression, Random Forest Regressor, Prophet (optional)
+- Removed duplicates & handled missing values  
+- Converted date formats  
+- Feature encoding for store_id & product_category  
 
-Target Variable: units_sold per day
+✅ **Feature Engineering**  
 
-Loss Metric: RMSE (Root Mean Squared Error)
+- Lag features (previous day/week sales)  
+- Promotion effect  
+- Stock-out risk indicators  
+- Category-level aggregations  
 
-⚙️ Pipeline Summary
+✅ **Modeling & Tuning**  
 
-✅ Data Preprocessing
+- Applied ML regression models  
+- Cross-validation for accuracy  
+- Feature importance analysis  
+- Forecasted demand converted into inventory recommendations
 
-Removed duplicates & handled missing values
+✅ **Inventory Recommendations**  
 
-Converted date formats
+- Flag products with predicted demand > current inventory  
+- Suggested reorder quantities  
+- Estimated potential lost sales avoided  
 
-Feature encoding for store_id & product_category
+---
 
-✅ Feature Engineering
+## 📁 Repository Structure
 
-Lag features (previous day/week sales)
-
-Promotion effect
-
-Stock-out risk indicators
-
-Category-level aggregations
-
-✅ Modeling & Tuning
-
-Applied ML regression models
-
-Cross-validation for accuracy
-
-Feature importance analysis
-
-Forecasted demand converted into inventory recommendations
-
-✅ Inventory Recommendations
-
-Flag products with predicted demand > current inventory
-
-Suggested reorder quantities
-
-Estimated potential lost sales avoided
-
-📁 Repository Structure
 retail-demand-ml-inventory/
 ├── notebooks/
-│   ├── 01_data_cleaning.ipynb
-│   ├── 02_eda_sales_inventory.ipynb
-│   ├── 03_demand_forecasting.ipynb
-│   ├── 04_inventory_recommendations.ipynb
+│ ├── 01_data_cleaning.ipynb
+│ ├── 02_eda_sales_inventory.ipynb
+│ ├── 03_demand_forecasting.ipynb
+│ ├── 04_inventory_recommendations.ipynb
 ├── dashboard/
-│   ├── retail_dashboard.pbit  # Power BI template
-│   ├── retail_dashboard.pdf   # Static version
+│ ├── retail_dashboard.pbit # Power BI template
+│ ├── retail_dashboard.pdf # Static version
 ├── data/
-│   └── retail_sales_inventory_dataset.csv
+│ └── retail_sales_inventory_dataset.csv
 ├── README.md
 └── requirements.txt
 
-📚 Libraries Used
 
-pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost, prophet
+---
 
-💡 Future Work
+## 📚 Libraries Used
 
-Add multi-store regional forecasting
+`pandas, numpy, matplotlib, seaborn, scikit-learn, xgboost, prophet`  
 
-Include seasonal effects (festivals, holidays)
+---
 
-Deployment using Streamlit / FastAPI for interactive dashboards
+## 👤 Author
 
-Explainable AI: SHAP / feature importance for inventory decisions
-
-👤 Author
-
-Aakarsh Kumar Sinha
-M.Sc. Operational Research | 2+ years Analytics & Business Consulting
+**Aakarsh Kumar Sinha**  
+M.Sc. Operational Research | 2+ years Analytics & Business Consulting  
 Data Science & ML Enthusiast | Portfolio-Ready Projects for MNCs
+
